@@ -17,16 +17,16 @@ ENV COMPOSER_HOME /composer
 
 RUN apk update && \
   apk add --update --no-cache --virtual=.build-dependencies \
-    autoconf=~2.69 \
-    gcc=~9.2 \
-    g++=~9.2 \
-    make=~4.2 \
+    autoconf \
+    gcc \
+    g++ \
+    make \
     tzdata=2020a-r0 \
-    git=~2.24 && \
+    git && \
   apk add --update --no-cache \
-    icu-dev=~64.2 \
-    libzip-dev=~1.5 \
-    oniguruma-dev=~6.9 && \
+    icu-dev \
+    libzip-dev \
+    oniguruma-dev && \
   cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
   echo ${TZ} > /etc/timezone && \
   pecl install xdebug && \
